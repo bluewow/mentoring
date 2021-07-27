@@ -33,5 +33,5 @@ jobs:
         export_default_credentials: true
 
     - name: Use gcloud CLI
-      run: deploy.sh
+      run: pwd deploy.sh
       
