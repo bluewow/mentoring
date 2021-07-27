@@ -1,0 +1,37 @@
+# This workflow will build a Java project with Gradle
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-gradle
+
+name: Java CI with Gradle
+
+on: # 어떤 이벤트를 수행하는지 정의하는 필드
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+# job 은 여러개를 만들수 있다
+# default 로 병렬실행
+# job > step
+jobs: 
+  build:
+
+    runs-on: ubuntu-latest  # job 이 실행될 머신타입
+
+    steps: # 
+    - uses: actions/checkout@v2 # custom or marketplace 에 정의된 패키지 사용
+    - name: Set up JDK 11 
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11'
+        distribution: 'adopt'
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew # cmd 실행
+    - name: Build with Gradle
+      run: ./gradlew build # cmd 실행
+
+# schedule 가능
+# 기타 환경변수 사용법
+# if 문
+# action 직접 만들기
+# 반복적인 JDK 설치? (캐시)
+# slack 연동.. etc
