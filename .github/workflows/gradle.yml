@@ -33,4 +33,5 @@ jobs:
         export_default_credentials: true
 
     - name: Use gcloud CLI
-      run: java --version
+      run: deploy.sh
+      
