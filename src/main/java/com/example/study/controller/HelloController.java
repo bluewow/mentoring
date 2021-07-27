@@ -8,7 +8,7 @@ public class HelloController {
 
     @GetMapping("hello")
     public String hello() {
-        return "hello spring";
+        return "hello spring11";
     }
 
     @GetMapping("pr")
