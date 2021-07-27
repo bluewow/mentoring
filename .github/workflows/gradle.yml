@@ -33,5 +33,5 @@ jobs:
         export_default_credentials: true
 
     - name: Use gcloud CLI
-      run: pwd deploy.sh
+      run: gcloud compute scp --recurse /home/dogseen gradlew
       
